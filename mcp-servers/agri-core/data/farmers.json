@@ -1,0 +1,42 @@
+{
+  "farmers": [
+    {
+      "id": "F001", "name": "Ramesh Patil",
+      "location": { "district": "Dharwad", "state": "Karnataka", "lat": 15.46, "lon": 75.01 },
+      "land_acres": 4.5,
+      "crops": [{ "name": "Rice", "variety": "Sona Masuri", "phase": "growing", "sown_date": "2026-01-10" }],
+      "income_category": "small_farmer", "bank_account": true, "aadhaar_linked": true, "role": "farmer"
+    },
+    {
+      "id": "F002", "name": "Lakshmi Devi",
+      "location": { "district": "Belgaum", "state": "Karnataka", "lat": 15.85, "lon": 74.50 },
+      "land_acres": 2.0,
+      "crops": [{ "name": "Tomato", "variety": "Arka Rakshak", "phase": "pest_watch", "sown_date": "2025-12-15" }],
+      "income_category": "marginal_farmer", "bank_account": true, "aadhaar_linked": true, "role": "farmer"
+    },
+    {
+      "id": "F003", "name": "Suresh Kumar",
+      "location": { "district": "Hubli", "state": "Karnataka", "lat": 15.36, "lon": 75.12 },
+      "land_acres": 8.0,
+      "crops": [{ "name": "Maize", "variety": "DHM-117", "phase": "harvest", "sown_date": "2025-11-01" }],
+      "income_category": "medium_farmer", "bank_account": true, "aadhaar_linked": true, "role": "farmer"
+    },
+    {
+      "id": "F004", "name": "Priya Naik",
+      "location": { "district": "Dharwad", "state": "Karnataka", "lat": 15.44, "lon": 75.03 },
+      "land_acres": 1.5,
+      "crops": [{ "name": "Cotton", "variety": "Bt Cotton", "phase": "pre_sowing", "sown_date": null }],
+      "income_category": "marginal_farmer", "bank_account": false, "aadhaar_linked": true, "role": "farmer"
+    },
+    {
+      "id": "F005", "name": "Vijay Reddy",
+      "location": { "district": "Gadag", "state": "Karnataka", "lat": 15.43, "lon": 75.63 },
+      "land_acres": 6.0,
+      "crops": [{ "name": "Wheat", "variety": "HD-2967", "phase": "post_harvest", "sown_date": "2025-10-20" }],
+      "income_category": "small_farmer", "bank_account": true, "aadhaar_linked": true, "role": "farmer"
+    }
+  ],
+  "officers": [{ "id": "O001", "name": "Dr. Anand Kulkarni", "block": "Dharwad", "role": "officer" }],
+  "traders": [{ "id": "T001", "name": "Ravi Traders", "mandi": "Dharwad APMC", "role": "trader" }]
+}
+

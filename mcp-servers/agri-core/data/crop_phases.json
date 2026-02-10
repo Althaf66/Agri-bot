@@ -1,0 +1,41 @@
+{
+  "phases": {
+    "pre_sowing": {
+      "display_name": "Pre-Sowing", "active_agents": ["climate", "finance"],
+      "tools_activated": ["get_forecast", "get_soil_moisture", "check_scheme_eligibility"],
+      "context_prompt": "Farmer is preparing to sow. Focus on soil conditions, planting window, seed subsidies.",
+      "next_phase": "sowing", "typical_duration_days": 15
+    },
+    "sowing": {
+      "display_name": "Sowing", "active_agents": ["climate", "finance"],
+      "tools_activated": ["get_forecast", "get_soil_moisture", "check_scheme_eligibility"],
+      "context_prompt": "Farmer is sowing. Focus on planting dates, seedling irrigation, insurance enrollment.",
+      "next_phase": "growing", "typical_duration_days": 10
+    },
+    "growing": {
+      "display_name": "Growing", "active_agents": ["climate", "doctor"],
+      "tools_activated": ["get_forecast", "get_soil_moisture", "diagnose_disease"],
+      "context_prompt": "Crop in active growth. Focus on irrigation, nutrient deficiency, weather stress, early pest signs.",
+      "next_phase": "pest_watch", "typical_duration_days": 45
+    },
+    "pest_watch": {
+      "display_name": "Pest Watch", "active_agents": ["climate", "doctor"],
+      "tools_activated": ["get_forecast", "diagnose_disease", "get_treatment", "check_pesticide_stock"],
+      "context_prompt": "Critical pest monitoring. Focus on disease ID, treatment, pesticide availability, humidity patterns.",
+      "next_phase": "harvest", "typical_duration_days": 30
+    },
+    "harvest": {
+      "display_name": "Harvest", "active_agents": ["climate", "market"],
+      "tools_activated": ["get_forecast", "get_mandi_prices", "compare_prices"],
+      "context_prompt": "Ready to harvest. Focus on dry weather windows, mandi prices, optimal harvest timing.",
+      "next_phase": "post_harvest", "typical_duration_days": 15
+    },
+    "post_harvest": {
+      "display_name": "Post-Harvest & Sale", "active_agents": ["market", "finance"],
+      "tools_activated": ["get_mandi_prices", "compare_prices", "get_price_trend", "get_payment_status"],
+      "context_prompt": "Crop harvested. Focus on selling price, transport cost, MSP claims, insurance claims.",
+      "next_phase": "pre_sowing", "typical_duration_days": 20
+    }
+  }
+}
+
