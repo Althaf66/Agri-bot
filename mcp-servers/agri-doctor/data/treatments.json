@@ -1,0 +1,319 @@
+{
+  "treatments": [
+    {
+      "disease_name": "Tomato Late Blight",
+      "common_names": ["Late Blight", "Phytophthora"],
+      "crop_types": ["Tomato", "Potato"],
+      "symptoms": [
+        "Dark water-soaked spots on leaves",
+        "White fungal growth on undersides",
+        "Brown lesions on stems",
+        "Fruit rot with irregular borders"
+      ],
+      "organic_treatment": "Apply copper-based fungicide (Bordeaux mixture) every 7 days. Remove and destroy infected plants. Ensure good air circulation.",
+      "chemical_treatment": "Metalaxyl + Mancozeb spray (2g/L water) every 7-10 days. Alternate with Chlorothalonil for resistance management.",
+      "dosage": "2-3 ml per liter of water",
+      "application_method": "Foliar spray covering both sides of leaves",
+      "prevention_tips": [
+        "Plant resistant varieties",
+        "Avoid overhead irrigation",
+        "Maintain proper spacing between plants",
+        "Remove crop debris after harvest"
+      ]
+    },
+    {
+      "disease_name": "Rice Blast",
+      "common_names": ["Blast Disease", "Magnaporthe"],
+      "crop_types": ["Rice"],
+      "symptoms": [
+        "Diamond-shaped lesions on leaves",
+        "Brown spots with gray centers",
+        "Neck rot causing panicle death",
+        "Reduced grain filling"
+      ],
+      "organic_treatment": "Spray neem oil solution (3%) twice weekly. Apply Trichoderma viride at 5g/L water. Ensure proper field drainage.",
+      "chemical_treatment": "Tricyclazole 75% WP at 0.6g/L water. Apply Carbendazim 50% WP at 1g/L for severe infections.",
+      "dosage": "500-600 ml per acre",
+      "application_method": "Spray during early morning or evening hours",
+      "prevention_tips": [
+        "Use resistant varieties",
+        "Avoid excessive nitrogen fertilizer",
+        "Maintain proper water level (2-3 inches)",
+        "Apply silicon fertilizer for plant strengthening"
+      ]
+    },
+    {
+      "disease_name": "Powdery Mildew",
+      "common_names": ["White Powder Disease"],
+      "crop_types": ["Wheat", "Pea", "Cucumber", "Grape"],
+      "symptoms": [
+        "White powdery coating on leaves",
+        "Stunted plant growth",
+        "Yellowing of infected leaves",
+        "Premature leaf drop"
+      ],
+      "organic_treatment": "Mix 1 tablespoon baking soda + 1 tablespoon vegetable oil in 1 gallon water. Spray weekly. Apply sulfur dust.",
+      "chemical_treatment": "Sulfex 80% WP at 2-3g/L water. Alternate with Triadimefon 25% WP for resistance management.",
+      "dosage": "2g per liter of water",
+      "application_method": "Foliar spray ensuring complete coverage",
+      "prevention_tips": [
+        "Improve air circulation",
+        "Avoid overhead watering",
+        "Remove infected plant parts",
+        "Plant in full sun locations"
+      ]
+    },
+    {
+      "disease_name": "Wheat Rust",
+      "common_names": ["Brown Rust", "Leaf Rust", "Puccinia"],
+      "crop_types": ["Wheat", "Barley"],
+      "symptoms": [
+        "Orange-brown pustules on leaves",
+        "Rusty powder on leaf surface",
+        "Yellowing and premature drying",
+        "Reduced grain weight"
+      ],
+      "organic_treatment": "Remove infected crop residue. Apply sulfur-based fungicides. Use resistant varieties for next season.",
+      "chemical_treatment": "Propiconazole 25% EC at 1ml/L water. Apply Tebuconazole if resistance develops.",
+      "dosage": "200-250 ml per acre",
+      "application_method": "Foliar spray at flag leaf stage",
+      "prevention_tips": [
+        "Plant rust-resistant varieties",
+        "Avoid late sowing",
+        "Maintain balanced fertilization",
+        "Monitor fields regularly"
+      ]
+    },
+    {
+      "disease_name": "Cotton Leaf Curl Virus",
+      "common_names": ["CLCuV", "Leaf Curl Disease"],
+      "crop_types": ["Cotton"],
+      "symptoms": [
+        "Upward curling of leaves",
+        "Thickening of leaf veins",
+        "Yellowing between veins",
+        "Stunted plant growth"
+      ],
+      "organic_treatment": "Remove infected plants immediately. Control whitefly vectors using neem oil spray. Use yellow sticky traps.",
+      "chemical_treatment": "Imidacloprid 17.8% SL at 0.5ml/L for whitefly control. No direct viral cure available.",
+      "dosage": "100ml per acre for vector control",
+      "application_method": "Spray every 10-15 days during growing season",
+      "prevention_tips": [
+        "Plant virus-resistant varieties",
+        "Control whitefly population",
+        "Rogue out infected plants early",
+        "Maintain clean field borders"
+      ]
+    },
+    {
+      "disease_name": "Bacterial Leaf Blight",
+      "common_names": ["Kresek", "Xanthomonas"],
+      "crop_types": ["Rice"],
+      "symptoms": [
+        "Water-soaked lesions on leaf tips",
+        "Yellowing along leaf margins",
+        "Wilting of entire plants (Kresek phase)",
+        "Bacterial ooze from cut stems"
+      ],
+      "organic_treatment": "Apply copper oxychloride at 3g/L. Remove and burn infected plants. Ensure proper field drainage.",
+      "chemical_treatment": "Streptocycline 9% + Tetracycline 1% at 1g/10L water. Spray copper hydroxide for prevention.",
+      "dosage": "200g per acre",
+      "application_method": "Spray at tillering and booting stage",
+      "prevention_tips": [
+        "Use disease-free seeds",
+        "Avoid deep planting",
+        "Drain fields before spraying",
+        "Use balanced nitrogen fertilization"
+      ]
+    },
+    {
+      "disease_name": "Tomato Early Blight",
+      "common_names": ["Alternaria", "Target Spot"],
+      "crop_types": ["Tomato", "Potato"],
+      "symptoms": [
+        "Dark concentric rings on leaves (target pattern)",
+        "Yellowing around lesions",
+        "Lower leaves affected first",
+        "Collar rot on stems"
+      ],
+      "organic_treatment": "Apply Bacillus subtilis bio-fungicide. Mulch to prevent soil splash. Remove lower leaves.",
+      "chemical_treatment": "Mancozeb 75% WP at 2.5g/L water. Alternate with Azoxystrobin for better control.",
+      "dosage": "2-2.5g per liter",
+      "application_method": "Foliar spray every 7-10 days",
+      "prevention_tips": [
+        "Crop rotation with non-solanaceous crops",
+        "Remove plant debris",
+        "Stake plants for better air flow",
+        "Avoid overhead irrigation"
+      ]
+    },
+    {
+      "disease_name": "Maize Common Rust",
+      "common_names": ["Corn Rust"],
+      "crop_types": ["Maize", "Corn"],
+      "symptoms": [
+        "Circular to elongated brown pustules",
+        "Pustules on both leaf surfaces",
+        "Reddish-brown powdery spores",
+        "Premature leaf death"
+      ],
+      "organic_treatment": "Plant early maturing varieties. Spray sulfur-based fungicides during early infection.",
+      "chemical_treatment": "Azoxystrobin 23% SC at 1ml/L water. Apply Propiconazole if severe.",
+      "dosage": "500ml per acre",
+      "application_method": "Spray when first pustules appear",
+      "prevention_tips": [
+        "Plant resistant hybrids",
+        "Avoid dense planting",
+        "Timely harvesting",
+        "Remove crop residue"
+      ]
+    },
+    {
+      "disease_name": "Downy Mildew",
+      "common_names": ["False Mildew"],
+      "crop_types": ["Grape", "Cucumber", "Lettuce"],
+      "symptoms": [
+        "Yellow angular spots on upper leaf surface",
+        "White downy growth on undersides",
+        "Brown necrotic patches",
+        "Fruit cracking and rotting"
+      ],
+      "organic_treatment": "Spray Bordeaux mixture (1%) at 10-day intervals. Improve air circulation. Remove infected leaves.",
+      "chemical_treatment": "Metalaxyl-M 4% + Mancozeb 64% WP at 2g/L water. Alternate with Dimethomorph.",
+      "dosage": "2.5g per liter",
+      "application_method": "Thorough spray including undersides",
+      "prevention_tips": [
+        "Avoid overhead watering",
+        "Plant in well-drained soil",
+        "Space plants properly",
+        "Remove morning dew mechanically"
+      ]
+    },
+    {
+      "disease_name": "Anthracnose",
+      "common_names": ["Fruit Rot", "Colletotrichum"],
+      "crop_types": ["Mango", "Chili", "Bean"],
+      "symptoms": [
+        "Sunken dark spots on fruits",
+        "Pink spore masses in center",
+        "Leaf spots with dark margins",
+        "Premature fruit drop"
+      ],
+      "organic_treatment": "Spray neem oil (1500 ppm) at 5ml/L. Apply Trichoderma viride. Prune infected parts.",
+      "chemical_treatment": "Carbendazim 50% WP at 1g/L water. Alternate with Copper oxychloride.",
+      "dosage": "1g per liter",
+      "application_method": "Spray at flowering and fruit development",
+      "prevention_tips": [
+        "Harvest mature fruits promptly",
+        "Avoid fruit injury",
+        "Remove mummified fruits",
+        "Prune for better air circulation"
+      ]
+    },
+    {
+      "disease_name": "Fusarium Wilt",
+      "common_names": ["Vascular Wilt"],
+      "crop_types": ["Tomato", "Banana", "Cotton"],
+      "symptoms": [
+        "Yellowing of lower leaves",
+        "Wilting during hot hours",
+        "Brown vascular discoloration",
+        "Plant death within 2-3 weeks"
+      ],
+      "organic_treatment": "Apply Trichoderma harzianum to soil. Remove and burn infected plants. Soil solarization.",
+      "chemical_treatment": "Carbendazim soil drench at 2g/L water. Apply Copper oxychloride foliar spray.",
+      "dosage": "1-2L per plant (soil drench)",
+      "application_method": "Soil application and foliar spray combination",
+      "prevention_tips": [
+        "Use resistant varieties",
+        "Crop rotation for 3-4 years",
+        "Maintain soil pH 6.5-7.0",
+        "Avoid root injury during cultivation"
+      ]
+    },
+    {
+      "disease_name": "Bacterial Wilt",
+      "common_names": ["Brown Rot", "Ralstonia"],
+      "crop_types": ["Tomato", "Potato", "Eggplant"],
+      "symptoms": [
+        "Rapid wilting without yellowing",
+        "Bacterial ooze from cut stems",
+        "Brown vascular discoloration",
+        "Entire plant collapse"
+      ],
+      "organic_treatment": "Remove infected plants immediately. Apply Pseudomonas fluorescens. Soil solarization for 4-6 weeks.",
+      "chemical_treatment": "Streptocycline 100ppm + Copper oxychloride 0.3% spray. Soil drenching with bleaching powder.",
+      "dosage": "1g/10L water",
+      "application_method": "Preventive spray and soil treatment",
+      "prevention_tips": [
+        "Use disease-free seedlings",
+        "Avoid waterlogging",
+        "Disinfect tools and equipment",
+        "Crop rotation with non-solanaceous crops"
+      ]
+    },
+    {
+      "disease_name": "Cercospora Leaf Spot",
+      "common_names": ["Frog Eye Leaf Spot"],
+      "crop_types": ["Soybean", "Groundnut", "Sugar Beet"],
+      "symptoms": [
+        "Circular brown spots with gray centers",
+        "Yellow halo around spots",
+        "Premature defoliation",
+        "Reduced pod formation"
+      ],
+      "organic_treatment": "Apply neem-based fungicides. Remove infected leaves. Use crop rotation.",
+      "chemical_treatment": "Mancozeb 75% WP at 2g/L water. Alternate with Carbendazim for better results.",
+      "dosage": "2-2.5g per liter",
+      "application_method": "Spray at pod formation stage",
+      "prevention_tips": [
+        "Use certified seeds",
+        "Maintain proper plant spacing",
+        "Avoid excessive nitrogen",
+        "Harvest at proper maturity"
+      ]
+    },
+    {
+      "disease_name": "Septoria Leaf Spot",
+      "common_names": ["Septoria Blight"],
+      "crop_types": ["Tomato", "Wheat"],
+      "symptoms": [
+        "Small circular spots with dark borders",
+        "Gray-white centers with black dots (pycnidia)",
+        "Yellowing and leaf drop",
+        "Lower leaves affected first"
+      ],
+      "organic_treatment": "Remove lower infected leaves. Apply copper-based sprays. Mulch to prevent soil splash.",
+      "chemical_treatment": "Chlorothalonil 75% WP at 2g/L water. Alternate with Mancozeb.",
+      "dosage": "2g per liter",
+      "application_method": "Thorough foliar spray every 7-10 days",
+      "prevention_tips": [
+        "Use resistant varieties",
+        "Space plants for air circulation",
+        "Avoid overhead irrigation",
+        "Rotate crops annually"
+      ]
+    },
+    {
+      "disease_name": "Healthy Crop",
+      "common_names": ["No Disease Detected"],
+      "crop_types": ["All Crops"],
+      "symptoms": [
+        "Uniform green foliage",
+        "Normal growth pattern",
+        "No visible lesions or spots",
+        "Healthy root system"
+      ],
+      "organic_treatment": "Continue regular monitoring. Maintain balanced nutrition. Ensure adequate water supply.",
+      "chemical_treatment": "No chemical treatment needed. Focus on preventive measures.",
+      "dosage": "N/A",
+      "application_method": "Routine monitoring and preventive care",
+      "prevention_tips": [
+        "Regular field scouting",
+        "Maintain plant nutrition",
+        "Proper irrigation management",
+        "Integrated pest management"
+      ]
+    }
+  ]
+}

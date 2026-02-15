@@ -1,0 +1,50 @@
+{
+  "crop_insurance_rates": {
+    "Rice": {
+      "season": "KHARIF",
+      "premium_rate": 0.02,
+      "sum_insured_per_acre": 40000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    },
+    "Wheat": {
+      "season": "RABI",
+      "premium_rate": 0.015,
+      "sum_insured_per_acre": 30000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    },
+    "Cotton": {
+      "season": "KHARIF",
+      "premium_rate": 0.02,
+      "sum_insured_per_acre": 50000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    },
+    "Maize": {
+      "season": "KHARIF",
+      "premium_rate": 0.02,
+      "sum_insured_per_acre": 35000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    },
+    "Tomato": {
+      "season": "RABI",
+      "premium_rate": 0.05,
+      "sum_insured_per_acre": 60000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    },
+    "Sugarcane": {
+      "season": "KHARIF",
+      "premium_rate": 0.05,
+      "sum_insured_per_acre": 55000,
+      "coverage": ["weather", "pest", "disease", "yield_loss"]
+    }
+  },
+  "weather_triggers": {
+    "RED": "Automatic claim eligibility - severe weather damage",
+    "ORANGE": "Potential claim - field inspection required",
+    "YELLOW": "Monitor situation - no immediate claim"
+  },
+  "disease_triggers": {
+    "CRITICAL": "Automatic claim eligibility - severe crop loss",
+    "HIGH": "Potential claim - damage assessment required",
+    "MEDIUM": "Monitor situation - no immediate claim"
+  }
+}

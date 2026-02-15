@@ -1,0 +1,93 @@
+{
+  "schemes": [
+    {
+      "scheme_name": "PM-KISAN",
+      "description": "Pradhan Mantri Kisan Samman Nidhi - ₹6,000/year direct benefit transfer",
+      "annual_benefit": 6000,
+      "installments": 3,
+      "installment_amount": 2000,
+      "eligibility_criteria": {
+        "land_ownership": "required",
+        "min_land_acres": 0,
+        "max_land_acres": null,
+        "bank_account": "required",
+        "aadhaar_linked": "required",
+        "exclusions": ["income_taxpayer", "govt_employee", "institutional_holder"]
+      },
+      "payment_cycles": [
+        {
+          "cycle": "Q1",
+          "months": ["April", "May", "June", "July"],
+          "scheduled_date": "April 1"
+        },
+        {
+          "cycle": "Q2",
+          "months": ["August", "September", "October", "November"],
+          "scheduled_date": "August 1"
+        },
+        {
+          "cycle": "Q3",
+          "months": ["December", "January", "February", "March"],
+          "scheduled_date": "December 1"
+        }
+      ]
+    },
+    {
+      "scheme_name": "PM Fasal Bima Yojana",
+      "description": "Crop Insurance Scheme",
+      "coverage_types": ["weather", "pest", "disease", "yield_loss"],
+      "eligibility_criteria": {
+        "notified_crops": ["Rice", "Wheat", "Cotton", "Maize", "Sugarcane", "Soybean", "Tomato"],
+        "land_ownership_or_tenancy": "required",
+        "premium_payment": "required"
+      },
+      "premium_rates": {
+        "kharif": 0.02,
+        "rabi": 0.015,
+        "commercial": 0.05
+      },
+      "claim_scenarios": [
+        {
+          "type": "prevented_sowing",
+          "trigger": "excess_rainfall"
+        },
+        {
+          "type": "mid_season_adversity",
+          "trigger": "drought|flood|hail"
+        },
+        {
+          "type": "post_harvest_loss",
+          "trigger": "cyclone|unseasonal_rain"
+        },
+        {
+          "type": "localized_calamity",
+          "trigger": "disease|pest_attack"
+        }
+      ]
+    },
+    {
+      "scheme_name": "Kisan Credit Card",
+      "description": "Agricultural credit at 4% interest",
+      "eligibility_criteria": {
+        "min_land_acres": 0.5,
+        "bank_account": "required",
+        "no_loan_default": "required",
+        "min_credit_score": 600
+      },
+      "loan_calculation": {
+        "scale_of_finance": {
+          "Rice": 40000,
+          "Wheat": 30000,
+          "Cotton": 50000,
+          "Maize": 35000,
+          "Tomato": 60000,
+          "Sugarcane": 55000,
+          "Soybean": 32000
+        },
+        "safety_margin": 1.5
+      },
+      "interest_rate": 0.04,
+      "max_tenure_months": 12
+    }
+  ]
+}

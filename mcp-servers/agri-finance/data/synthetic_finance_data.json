@@ -1,0 +1,173 @@
+{
+  "enrollments": [
+    {
+      "farmer_id": "F001",
+      "schemes": ["PM-KISAN", "PM Fasal Bima Yojana", "Kisan Credit Card"],
+      "pm_kisan_enrollment_date": "2023-01-15",
+      "total_payments_received": 18000,
+      "insurance_policies": [
+        {
+          "crop": "Rice",
+          "season": "KHARIF",
+          "sum_insured": 180000,
+          "premium_paid": 3600,
+          "start_date": "2026-01-01",
+          "end_date": "2026-06-30",
+          "status": "ACTIVE"
+        }
+      ],
+      "loans": [
+        {
+          "loan_amount": 270000,
+          "interest_rate": 0.04,
+          "tenure_months": 12,
+          "sanctioned_date": "2026-01-10",
+          "disbursement_date": "2026-01-15",
+          "status": "DISBURSED"
+        }
+      ],
+      "credit_score": 720,
+      "has_loan_default": false,
+      "is_taxpayer": false
+    },
+    {
+      "farmer_id": "F002",
+      "schemes": ["PM-KISAN", "PM Fasal Bima Yojana"],
+      "pm_kisan_enrollment_date": "2023-06-20",
+      "total_payments_received": 14000,
+      "insurance_policies": [
+        {
+          "crop": "Tomato",
+          "season": "RABI",
+          "sum_insured": 120000,
+          "premium_paid": 1800,
+          "start_date": "2025-12-01",
+          "end_date": "2026-04-30",
+          "status": "ACTIVE"
+        }
+      ],
+      "loans": [],
+      "credit_score": 680,
+      "has_loan_default": false,
+      "is_taxpayer": false
+    },
+    {
+      "farmer_id": "F003",
+      "schemes": ["PM-KISAN", "Kisan Credit Card"],
+      "pm_kisan_enrollment_date": "2022-11-05",
+      "total_payments_received": 24000,
+      "insurance_policies": [],
+      "loans": [
+        {
+          "loan_amount": 420000,
+          "interest_rate": 0.04,
+          "tenure_months": 12,
+          "sanctioned_date": "2025-10-15",
+          "disbursement_date": "2025-10-20",
+          "status": "ACTIVE"
+        }
+      ],
+      "credit_score": 750,
+      "has_loan_default": false,
+      "is_taxpayer": false
+    },
+    {
+      "farmer_id": "F004",
+      "schemes": [],
+      "pm_kisan_enrollment_date": null,
+      "total_payments_received": 0,
+      "insurance_policies": [],
+      "loans": [],
+      "credit_score": 620,
+      "has_loan_default": false,
+      "is_taxpayer": false
+    },
+    {
+      "farmer_id": "F005",
+      "schemes": ["PM-KISAN", "PM Fasal Bima Yojana", "Kisan Credit Card"],
+      "pm_kisan_enrollment_date": "2023-03-10",
+      "total_payments_received": 16000,
+      "insurance_policies": [
+        {
+          "crop": "Wheat",
+          "season": "RABI",
+          "sum_insured": 180000,
+          "premium_paid": 2700,
+          "start_date": "2025-10-01",
+          "end_date": "2026-03-31",
+          "status": "EXPIRED"
+        }
+      ],
+      "loans": [
+        {
+          "loan_amount": 270000,
+          "interest_rate": 0.04,
+          "tenure_months": 12,
+          "sanctioned_date": "2025-09-20",
+          "disbursement_date": "2025-09-25",
+          "status": "REPAID"
+        }
+      ],
+      "credit_score": 740,
+      "has_loan_default": false,
+      "is_taxpayer": false
+    }
+  ],
+  "payment_history": [
+    {
+      "farmer_id": "F001",
+      "scheme": "PM-KISAN",
+      "payments": [
+        {"cycle": "Q1_2025", "amount": 2000, "scheduled_date": "2025-04-01", "actual_date": "2025-04-03", "status": "PAID"},
+        {"cycle": "Q2_2025", "amount": 2000, "scheduled_date": "2025-08-01", "actual_date": "2025-08-07", "status": "PAID"},
+        {"cycle": "Q3_2025", "amount": 2000, "scheduled_date": "2025-12-01", "actual_date": "2025-12-04", "status": "PAID"},
+        {"cycle": "Q1_2026", "amount": 2000, "scheduled_date": "2026-04-01", "actual_date": "2026-04-05", "status": "PAID"},
+        {"cycle": "Q2_2026", "amount": 2000, "scheduled_date": "2026-08-01", "actual_date": null, "status": "PENDING"},
+        {"cycle": "Q3_2026", "amount": 2000, "scheduled_date": "2026-12-01", "actual_date": null, "status": "SCHEDULED"}
+      ]
+    },
+    {
+      "farmer_id": "F002",
+      "scheme": "PM-KISAN",
+      "payments": [
+        {"cycle": "Q2_2025", "amount": 2000, "scheduled_date": "2025-08-01", "actual_date": "2025-08-10", "status": "PAID"},
+        {"cycle": "Q3_2025", "amount": 2000, "scheduled_date": "2025-12-01", "actual_date": "2025-12-06", "status": "PAID"},
+        {"cycle": "Q1_2026", "amount": 2000, "scheduled_date": "2026-04-01", "actual_date": "2026-04-08", "status": "PAID"},
+        {"cycle": "Q2_2026", "amount": 2000, "scheduled_date": "2026-08-01", "actual_date": null, "status": "PENDING"}
+      ]
+    },
+    {
+      "farmer_id": "F003",
+      "scheme": "PM-KISAN",
+      "payments": [
+        {"cycle": "Q1_2025", "amount": 2000, "scheduled_date": "2025-04-01", "actual_date": "2025-04-03", "status": "PAID"},
+        {"cycle": "Q2_2025", "amount": 2000, "scheduled_date": "2025-08-01", "actual_date": "2025-08-05", "status": "PAID"},
+        {"cycle": "Q3_2025", "amount": 2000, "scheduled_date": "2025-12-01", "actual_date": "2025-12-02", "status": "PAID"},
+        {"cycle": "Q1_2026", "amount": 2000, "scheduled_date": "2026-04-01", "actual_date": "2026-04-04", "status": "PAID"},
+        {"cycle": "Q2_2026", "amount": 2000, "scheduled_date": "2026-08-01", "actual_date": null, "status": "PENDING"}
+      ]
+    },
+    {
+      "farmer_id": "F005",
+      "scheme": "PM-KISAN",
+      "payments": [
+        {"cycle": "Q1_2025", "amount": 2000, "scheduled_date": "2025-04-01", "actual_date": "2025-04-05", "status": "PAID"},
+        {"cycle": "Q2_2025", "amount": 2000, "scheduled_date": "2025-08-01", "actual_date": "2025-08-09", "status": "PAID"},
+        {"cycle": "Q3_2025", "amount": 2000, "scheduled_date": "2025-12-01", "actual_date": "2025-12-03", "status": "PAID"},
+        {"cycle": "Q1_2026", "amount": 2000, "scheduled_date": "2026-04-01", "actual_date": "2026-04-06", "status": "PAID"},
+        {"cycle": "Q2_2026", "amount": 2000, "scheduled_date": "2026-08-01", "actual_date": null, "status": "PENDING"}
+      ]
+    }
+  ],
+  "insurance_claims": [
+    {
+      "farmer_id": "F002",
+      "policy_crop": "Tomato",
+      "claim_type": "DISEASE",
+      "claim_amount": 45000,
+      "claim_reason": "Late Blight outbreak detected in growing phase",
+      "filed_date": "2026-02-05",
+      "status": "UNDER_REVIEW"
+    }
+  ]
+}

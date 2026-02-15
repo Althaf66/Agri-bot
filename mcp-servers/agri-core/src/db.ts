@@ -39,8 +39,38 @@ const createSchema = (db: Database.Database): void => {
       income_category TEXT NOT NULL,
       bank_account BOOLEAN NOT NULL,
       aadhaar_linked BOOLEAN NOT NULL,
+      phone TEXT,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (id) REFERENCES users(id),
       FOREIGN KEY (location_id) REFERENCES locations(id)
+    );
+  `);
+
+  // Add unique constraint on user names
+  db.exec(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_users_unique_name ON users(name);
+  `);
+
+  // Password hashing table (separate for security)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS farmer_credentials (
+      farmer_id TEXT PRIMARY KEY,
+      password_hash TEXT NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      last_login TEXT,
+      FOREIGN KEY (farmer_id) REFERENCES farmers(id)
+    );
+  `);
+
+  // City coordinates mapping table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS city_coordinates (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      city_name TEXT UNIQUE NOT NULL,
+      district TEXT NOT NULL,
+      state TEXT NOT NULL,
+      latitude REAL NOT NULL,
+      longitude REAL NOT NULL
     );
   `);
 
@@ -199,8 +229,8 @@ const migrateData = (db: Database.Database): void => {
     `);
 
     const farmerInsert = db.prepare(`
-      INSERT INTO farmers (id, location_id, land_acres, income_category, bank_account, aadhaar_linked)
-      VALUES (?, ?, ?, ?, ?, ?)
+      INSERT INTO farmers (id, location_id, land_acres, income_category, bank_account, aadhaar_linked, phone, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
     `);
 
     const cropTypeInsert = db.prepare(`
@@ -234,7 +264,8 @@ const migrateData = (db: Database.Database): void => {
         farmer.land_acres,
         farmer.income_category,
         farmer.bank_account ? 1 : 0,
-        farmer.aadhaar_linked ? 1 : 0
+        farmer.aadhaar_linked ? 1 : 0,
+        null  // phone - will be added during registration
       );
 
       // Insert crops
@@ -279,6 +310,28 @@ const migrateData = (db: Database.Database): void => {
       userInsert.run(trader.id, trader.name, trader.role);
       traderInsert.run(trader.id, trader.mandi);
     }
+
+    // Insert city coordinates seed data for Karnataka cities
+    const cityInsert = db.prepare(`
+      INSERT INTO city_coordinates (city_name, district, state, latitude, longitude)
+      VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT(city_name) DO NOTHING
+    `);
+
+    const cities = [
+      { city: 'Dharwad', district: 'Dharwad', state: 'Karnataka', lat: 15.4589, lon: 75.0078 },
+      { city: 'Belgaum', district: 'Belgaum', state: 'Karnataka', lat: 15.8497, lon: 74.4977 },
+      { city: 'Hubli', district: 'Dharwad', state: 'Karnataka', lat: 15.3647, lon: 75.1240 },
+      { city: 'Gadag', district: 'Gadag', state: 'Karnataka', lat: 15.4287, lon: 75.6280 },
+      { city: 'Bagalkot', district: 'Bagalkot', state: 'Karnataka', lat: 16.1691, lon: 75.6905 },
+      { city: 'Bellary', district: 'Bellary', state: 'Karnataka', lat: 15.1394, lon: 76.9214 },
+      { city: 'Bijapur', district: 'Bijapur', state: 'Karnataka', lat: 16.8302, lon: 75.7100 },
+      { city: 'Raichur', district: 'Raichur', state: 'Karnataka', lat: 16.2076, lon: 77.3463 }
+    ];
+
+    for (const city of cities) {
+      cityInsert.run(city.city, city.district, city.state, city.lat, city.lon);
+    }
   });
 
   transaction();
@@ -299,12 +352,33 @@ export const createAgribotDatabase = (dbPath: string): AgribotDatabase => {
 
   // Initialize database (idempotent)
   const initialize = (): void => {
-    const tableCount = db
-      .prepare("SELECT count(*) as cnt FROM sqlite_master WHERE type='table'")
-      .get() as { cnt: number };
+    // List of critical tables that should exist in a properly initialized database
+    const criticalTables = [
+      'users',
+      'farmers',
+      'locations',
+      'crop_types',
+      'farmer_credentials',
+      'city_coordinates'
+    ];
 
-    if (tableCount.cnt > 0) {
-      console.error('Database already initialized');
+    // Check which critical tables exist
+    const existingTables = db
+      .prepare("SELECT name FROM sqlite_master WHERE type='table'")
+      .all() as { name: string }[];
+
+    const existingTableNames = new Set(existingTables.map(t => t.name));
+    const missingTables = criticalTables.filter(t => !existingTableNames.has(t));
+
+    if (missingTables.length === 0 && existingTableNames.size > 0) {
+      console.error(`Database already initialized (${existingTableNames.size} tables found)`);
+      return;
+    }
+
+    if (missingTables.length > 0 && existingTableNames.size > 0) {
+      console.error(`Warning: Database is partially initialized. Missing critical tables: ${missingTables.join(', ')}`);
+      console.error('This may indicate a schema update. Consider running migrations.');
+      console.error(`Found ${existingTableNames.size} existing tables: ${Array.from(existingTableNames).join(', ')}`);
       return;
     }
 

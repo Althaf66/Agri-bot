@@ -1,0 +1,48 @@
+{
+  "pm_kisan_2026": [
+    {
+      "cycle": "Q1_2026",
+      "scheduled_date": "2026-04-01",
+      "amount": 2000,
+      "status": "PAID",
+      "actual_disbursement": "2026-04-05"
+    },
+    {
+      "cycle": "Q2_2026",
+      "scheduled_date": "2026-08-01",
+      "amount": 2000,
+      "status": "PENDING",
+      "actual_disbursement": null
+    },
+    {
+      "cycle": "Q3_2026",
+      "scheduled_date": "2026-12-01",
+      "amount": 2000,
+      "status": "SCHEDULED",
+      "actual_disbursement": null
+    }
+  ],
+  "pm_kisan_2025": [
+    {
+      "cycle": "Q1_2025",
+      "scheduled_date": "2025-04-01",
+      "amount": 2000,
+      "status": "PAID",
+      "actual_disbursement": "2025-04-03"
+    },
+    {
+      "cycle": "Q2_2025",
+      "scheduled_date": "2025-08-01",
+      "amount": 2000,
+      "status": "PAID",
+      "actual_disbursement": "2025-08-07"
+    },
+    {
+      "cycle": "Q3_2025",
+      "scheduled_date": "2025-12-01",
+      "amount": 2000,
+      "status": "PAID",
+      "actual_disbursement": "2025-12-04"
+    }
+  ]
+}

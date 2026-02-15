@@ -5,17 +5,47 @@ import type { Farmer, CropInfo, Location, CropPhase, FarmerProfile, PhaseTransit
 
 // Type for the queries instance
 export interface AgribotQueries {
-  getFarmerProfile: (farmerId: string) => FarmerProfile | null;
+  resolveFarmerIdentifier: (identifier: string) => string | null;
+  getFarmerProfile: (identifier: string) => FarmerProfile | null;
   getCropPhaseDetails: (phaseKey: string) => CropPhase | null;
-  updateCropPhase: (farmerId: string, cropName: string) => PhaseTransitionResult | null;
+  updateCropPhase: (identifier: string, cropName: string) => PhaseTransitionResult | null;
   listFarmers: (district?: string) => Farmer[];
 }
 
 // Factory function to create query functions
 export const createAgribotQueries = (db: Database.Database): AgribotQueries => {
 
+  // Hybrid farmer lookup - accepts farmer_id OR farmer name
+  const resolveFarmerIdentifier = (identifier: string): string | null => {
+    // Try exact farmer_id match first (case-insensitive)
+    const byId = db.prepare('SELECT id FROM farmers WHERE UPPER(id) = UPPER(?)').get(identifier) as { id: string } | undefined;
+    if (byId) return byId.id;
+
+    // Try exact name match (case-insensitive) via users table
+    const byName = db.prepare(`
+      SELECT f.id FROM farmers f
+      JOIN users u ON f.id = u.id
+      WHERE UPPER(u.name) = UPPER(?)
+    `).get(identifier) as { id: string } | undefined;
+    if (byName) return byName.id;
+
+    // Try partial name match (for "Ramesh" matching "Ramesh Patil")
+    const byPartialName = db.prepare(`
+      SELECT f.id FROM farmers f
+      JOIN users u ON f.id = u.id
+      WHERE UPPER(u.name) LIKE UPPER(?)
+      LIMIT 1
+    `).get(`%${identifier}%`) as { id: string } | undefined;
+    if (byPartialName) return byPartialName.id;
+
+    return null;
+  };
+
   // Get farmer profile with current crop phase context
-  const getFarmerProfile = (farmerId: string): FarmerProfile | null => {
+  const getFarmerProfile = (identifier: string): FarmerProfile | null => {
+    // Resolve identifier to farmer_id
+    const farmerId = resolveFarmerIdentifier(identifier);
+    if (!farmerId) return null;
     // Get farmer basic info
     const farmerRow = db
       .prepare(`
@@ -120,7 +150,11 @@ export const createAgribotQueries = (db: Database.Database): AgribotQueries => {
   };
 
   // Update crop phase to next phase (transactional)
-  const updateCropPhase = (farmerId: string, cropName: string): PhaseTransitionResult | null => {
+  const updateCropPhase = (identifier: string, cropName: string): PhaseTransitionResult | null => {
+    // Resolve identifier to farmer_id
+    const farmerId = resolveFarmerIdentifier(identifier);
+    if (!farmerId) return null;
+
     const transaction = db.transaction(() => {
       // Find the crop (case-insensitive)
       const cropRow = db
@@ -245,6 +279,7 @@ export const createAgribotQueries = (db: Database.Database): AgribotQueries => {
 
   // Return public API
   return {
+    resolveFarmerIdentifier,
     getFarmerProfile,
     getCropPhaseDetails,
     updateCropPhase,
