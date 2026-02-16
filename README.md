@@ -5,6 +5,10 @@ AgriBot is an AI-powered agricultural operations platform that provides Indian f
 ---
 
 ## Architecture
+<img width="1062" height="587" alt="image" src="https://github.com/user-attachments/assets/3fedc7ff-1efa-42e8-8fe7-c3f1b9e414e6" />
+
+### MCP integrated in Archestra
+<img width="1639" height="826" alt="image" src="https://github.com/user-attachments/assets/c3f02b3e-14da-4f18-8e68-f321c8eca40a" />
 
 
 ## Key Features
